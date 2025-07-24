@@ -1,2 +1,3 @@
-# 1st.github.io
-Engineering Blog
+# 1st Engineering Blog
+
+My blog with some useful topics around Web Development, Python pro tips, Algorithms and more.
