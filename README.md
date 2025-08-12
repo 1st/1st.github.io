@@ -9,3 +9,7 @@ Visit https://1st.github.io
 ### Python
 
 - [Is it possible that two objects in python have the same ID?](./articles/python/Same-ID.md)
+
+### Testing
+
+- [Software Test Types](/articles/testing/Test-Types.md)
