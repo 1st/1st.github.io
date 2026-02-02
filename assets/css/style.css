@@ -185,6 +185,7 @@ a:hover {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .tag {
