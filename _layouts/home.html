@@ -23,7 +23,7 @@ layout: default
         Clear explanations, concrete examples, and workflows you can apply immediately.
       </p>
       <div class="tag-row" style="margin-top: 16px;">
-        {% assign top_tags = site.tags | sort_natural: "0" %}
+        {% assign top_tags = site.tags | sort %}
         {% for tag in top_tags limit:6 %}
           <a class="tag" href="/tags#{{ tag[0] | slugify }}">{{ tag[0] }}</a>
         {% endfor %}
