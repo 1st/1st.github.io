@@ -23,7 +23,7 @@ layout: default
       <a class="section-link" href="/articles">View all</a>
     </div>
     <div class="post-grid">
-      {% for post in site.posts %}
+      {% for post in site.posts limit:6 %}
       <article class="card fade-in {% if forloop.index == 1 %}delay-1{% elsif forloop.index == 2 %}delay-2{% else %}delay-3{% endif %}">
         {% if post.category %}
           <div class="category-label">{{ post.category | capitalize }}</div>
