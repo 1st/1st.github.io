@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can two Python objects share the same ID? | 1st Engineering Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="container">
+      <nav class="nav">
+        <div class="brand">1st Engineering Blog</div>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="/index.html#articles">Articles</a>
+          <a href="/index.html#about">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container article">
+      <a class="back-link" href="/">&larr; Back to home</a>
+
+      <header class="article-header">
+        <h1 class="article-title">Can two Python objects share the same ID?</h1>
+        <div class="article-meta">Reading time: 6 minutes · Category: Python</div>
+      </header>
+
+      <article class="content">
+        <p>
+          In Python, the <code>id()</code> of an object is its memory address (or a unique identifier for that object
+          during its lifetime). Whether two objects can share the same <code>id()</code> depends on when and what objects
+          we are talking about.
+        </p>
+
+        <h2>1. While both objects are alive</h2>
+        <p>
+          No, two different live objects cannot have the same <code>id()</code>. If two names point to the same object,
+          their <code>id()</code> will be the same, but that is because they are not two separate objects.
+        </p>
+        <pre><code class="language-python">a = [1, 2, 3]
+b = a
+print(id(a) == id(b))  # True (same object)</code></pre>
+
+        <h2>2. After an object is destroyed (garbage collected)</h2>
+        <p>
+          Yes, IDs can be reused. When an object is no longer in use and is garbage collected, Python may reuse its
+          memory address for a new object, giving it the same id as a previously destroyed one.
+        </p>
+        <pre><code class="language-python">x = 42
+print(id(x))    # e.g., 140710982120336
+del x
+y = 43
+print(id(y))    # Could be the same as x's id (reused)</code></pre>
+
+        <h2>3. Small integers and strings (interning)</h2>
+        <p>
+          Python reuses memory for certain immutable objects (like small integers -5 to 256 and some strings)
+          through a process called interning. This means different variables can point to the same object.
+        </p>
+        <pre><code class="language-python">a = 100
+b = 100
+print(id(a) == id(b))  # True (both point to the same interned integer)</code></pre>
+
+        <h2>In summary</h2>
+        <ul>
+          <li>Two different live objects will never share the same <code>id()</code>.</li>
+          <li>IDs can be reused after objects are destroyed.</li>
+          <li>Interned objects (like small integers and some strings) will share the same <code>id()</code>.</li>
+        </ul>
+
+        <h2>Bonus: what is interning?</h2>
+        <p>
+          Interning is a method used by Python to store only one copy of an immutable object (like certain strings or
+          integers) to save memory and speed up comparisons. It is especially helpful in situations where identity
+          checks are common.
+        </p>
+
+        <h3>Interning of small strings</h3>
+        <p>Python automatically interns:</p>
+        <ul>
+          <li>Identifiers (like variable names)</li>
+          <li>Strings that look like identifiers (for example, <code>"hello"</code>, <code>"name"</code>)</li>
+          <li>Short strings with only letters, digits, or underscores</li>
+          <li>Some compile-time constant strings (literals used in your code)</li>
+        </ul>
+
+        <p>Python does not automatically intern:</p>
+        <ul>
+          <li>Strings with spaces or special characters</li>
+          <li>Strings created at runtime</li>
+          <li>Long strings (beyond some length)</li>
+        </ul>
+
+        <h3>Examples</h3>
+        <h4>Automatically interned strings</h4>
+        <pre><code class="language-python">a = "hello"
+b = "hello"
+print(a is b)        # True
+print(id(a), id(b))  # Same id</code></pre>
+
+        <h4>Not automatically interned</h4>
+        <pre><code class="language-python">a = "hello world"
+b = "hello world"
+print(a is b)        # Often False
+print(id(a), id(b))  # Likely different</code></pre>
+
+        <h4>Manually interning</h4>
+        <pre><code class="language-python">import sys
+
+a = sys.intern("hello world")
+b = sys.intern("hello world")
+print(a is b)        # True</code></pre>
+
+        <h3>Fun test with runtime strings</h3>
+        <pre><code class="language-python">x = "".join(["py", "thon"])
+y = "python"
+print(x == y)  # True (contents are same)
+print(x is y)  # False (not same object, unless interned)
+
+x = sys.intern(x)
+print(x is y)  # Now True</code></pre>
+      </article>
+    </main>
+
+    <footer class="container footer">
+      <a class="back-link" href="/">&larr; Back to home</a>
+    </footer>
+  </body>
+</html>
