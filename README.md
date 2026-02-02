@@ -1,15 +1,19 @@
 # 1st Engineering Blog
 
-My blog with some useful topics around Web Development, Python pro tips, Algorithms and more.
+My blog with notes on web development, Python internals, and practical testing.
 
 Visit https://1st.github.io
 
+## Writing posts
+
+Posts live in `_posts/` and use standard Jekyll front matter.
+
 ## Table of Contents
-
-### Python
-
-- [Is it possible that two objects in python have the same ID?](./articles/python/Same-ID.md)
 
 ### Testing
 
-- [Software Test Types](/articles/testing/Test-Types.md)
+- [Software Test Types](https://1st.github.io/testing/software-test-types/)
+
+### Python
+
+- [Can two Python objects share the same ID?](https://1st.github.io/python/can-two-python-objects-share-the-same-id/)

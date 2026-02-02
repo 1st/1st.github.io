@@ -1,0 +1,23 @@
+title: 1st Engineering Blog
+email: ""
+description: >-
+  Notes on web development, Python internals, and practical testing.
+baseurl: ""
+url: "https://1st.github.io"
+
+permalink: /:categories/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins: []
+
+# Defaults for posts
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Anton
