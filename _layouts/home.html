@@ -23,10 +23,10 @@ layout: default
         Clear explanations, concrete examples, and workflows you can apply immediately.
       </p>
       <div class="tag-row" style="margin-top: 16px;">
-        <span class="tag">Python</span>
-        <span class="tag">Testing</span>
-        <span class="tag">DevOps</span>
-        <span class="tag">Web</span>
+        {% assign top_tags = site.tags | sort_natural: "0" %}
+        {% for tag in top_tags limit:6 %}
+          <a class="tag" href="/tags#{{ tag[0] | slugify }}">{{ tag[0] }}</a>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -41,7 +41,7 @@ layout: default
             <span class="tag">{{ post.category | capitalize }}</span>
           {% endif %}
           {% if post.tags %}
-            {% for tag in post.tags limit:1 %}
+            {% for tag in post.tags %}
               <a class="tag" href="/tags#{{ tag | slugify }}">{{ tag }}</a>
             {% endfor %}
           {% endif %}
