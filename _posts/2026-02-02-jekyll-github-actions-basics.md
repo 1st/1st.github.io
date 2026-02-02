@@ -14,7 +14,7 @@ Create `_config.yml` with the basics:
 ```yml
 title: 1st Engineering Blog
 url: "https://1st.github.io"
-permalink: /:categories/:title/
+permalink: /:categories/:title
 markdown: kramdown
 ```
 
@@ -71,3 +71,5 @@ jobs:
 ```
 
 That is it. Push to `main` and GitHub Pages builds the site.
+
+Look at my blog source code to find the actually working example: https://github.com/1st/1st.github.io
