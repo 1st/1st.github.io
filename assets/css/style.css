@@ -152,6 +152,29 @@ a:hover {
   margin: 0 0 16px;
 }
 
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.section-header .section-title {
+  margin: 0;
+}
+
+.section-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.section-link:hover {
+  color: var(--accent-dark);
+}
+
 .post-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
