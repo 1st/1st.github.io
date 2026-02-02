@@ -11,12 +11,13 @@ permalink: /tags
 
   <article class="content">
     <div class="tag-row" style="margin-bottom: 18px;">
-      {% for tag in site.tags %}
+      {% assign sorted_tags = site.tags | sort %}
+      {% for tag in sorted_tags %}
         <a class="tag" href="#{{ tag[0] | slugify }}">{{ tag[0] }}</a>
       {% endfor %}
     </div>
 
-    {% for tag in site.tags %}
+    {% for tag in sorted_tags %}
       <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
       <ul>
         {% for post in tag[1] %}
