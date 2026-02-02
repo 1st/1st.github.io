@@ -47,7 +47,7 @@ layout: default
           {% endif %}
         </div>
         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        <p class="meta">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        <p class="meta">{{ post.date | date: "%B %-d, %Y" }} · {{ post.excerpt | strip_html | truncate: 120 }}</p>
         <a class="button secondary" href="{{ post.url }}">Read article</a>
       </article>
       {% endfor %}
