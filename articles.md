@@ -10,16 +10,42 @@ permalink: /articles
   </header>
 
   <article class="content">
-    <ul>
-      {% for post in site.posts %}
-        <li>
-          <a href="{{ post.url }}">{{ post.title }}</a>
-          <span class="meta"> · {{ post.date | date: "%B %-d, %Y" }}</span>
-          {% if post.category %}
-            <span class="meta"> · {{ post.category | capitalize }}</span>
-          {% endif %}
-        </li>
+    <h2>Latest</h2>
+    <div class="post-grid">
+      {% for post in site.posts limit:12 %}
+      <article class="card">
+        {% if post.category %}
+          <div class="category-label">{{ post.category | capitalize }}</div>
+        {% endif %}
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p class="meta">
+          <span class="meta-pill">{{ post.date | date: "%B %-d, %Y" }}</span>
+          {{ post.excerpt | strip_html | truncate: 120 }}
+        </p>
+        {% if post.tags %}
+        <div class="tag-row">
+          {% for tag in post.tags %}
+            <a class="tag" href="/tags#{{ tag | slugify }}">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
       {% endfor %}
-    </ul>
+    </div>
+
+    {% if site.posts.size > 12 %}
+      <h2 style="margin-top: 28px;">More articles</h2>
+      <ul>
+        {% for post in site.posts offset:12 %}
+          <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <span class="meta"> · {{ post.date | date: "%B %-d, %Y" }}</span>
+            {% if post.category %}
+              <span class="meta"> · {{ post.category | capitalize }}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   </article>
 </main>
