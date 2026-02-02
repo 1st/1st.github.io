@@ -5,7 +5,7 @@ description: >-
 baseurl: ""
 url: "https://1st.github.io"
 
-permalink: /:categories/:title/
+permalink: /:categories/:title
 
 markdown: kramdown
 kramdown:

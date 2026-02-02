@@ -12,8 +12,8 @@ Posts live in `_posts/` and use standard Jekyll front matter.
 
 ### Testing
 
-- [Software Test Types](https://1st.github.io/testing/software-test-types/)
+- [Software Test Types](https://1st.github.io/testing/software-test-types)
 
 ### Python
 
-- [Can two Python objects share the same ID?](https://1st.github.io/python/can-two-python-objects-share-the-same-id/)
+- [Can two Python objects share the same ID?](https://1st.github.io/python/can-two-python-objects-share-the-same-id)
