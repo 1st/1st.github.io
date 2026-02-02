@@ -166,9 +166,9 @@ a:hover {
 
 .section-link {
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 .section-link:hover {
