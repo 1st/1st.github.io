@@ -28,7 +28,7 @@ body {
 
 a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:hover {
@@ -207,6 +207,12 @@ a:hover {
   font-size: 0.9rem;
 }
 
+.footer a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .article {
   padding: 36px 0 60px;
 }
@@ -264,6 +270,11 @@ a:hover {
   font-size: 0.9rem;
 }
 
+.content a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
 .content table {
   width: 100%;
   border-collapse: collapse;
