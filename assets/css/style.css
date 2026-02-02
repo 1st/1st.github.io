@@ -196,6 +196,13 @@ a:hover {
   border-radius: 999px;
   background: rgba(0, 113, 227, 0.12);
   color: var(--accent);
+  border: 1px solid transparent;
+}
+
+.tag:hover {
+  background: rgba(0, 91, 181, 0.18);
+  color: var(--accent-dark);
+  border-color: rgba(0, 91, 181, 0.35);
 }
 
 .meta {
