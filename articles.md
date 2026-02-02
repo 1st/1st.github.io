@@ -6,7 +6,7 @@ permalink: /articles
 <main class="container article">
   <header class="article-header">
     <h1 class="article-title">All articles</h1>
-    <div class="article-meta">Newest to oldest.</div>
+    <div class="article-meta">Newest to oldest. {{ site.posts.size }} total.</div>
   </header>
 
   <section class="section">
