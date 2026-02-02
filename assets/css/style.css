@@ -74,25 +74,20 @@ a:hover {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 36px;
-  align-items: center;
+  display: block;
   padding: 48px 0 32px;
 }
 
-.hero-card {
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: 32px;
-  box-shadow: var(--shadow);
-  border: var(--border);
+.hero-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .hero h1 {
   font-family: "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(2.2rem, 4vw, 3.2rem);
-  margin: 0 0 16px;
+  margin: 0;
 }
 
 .hero p {
@@ -101,11 +96,8 @@ a:hover {
   font-size: 1.05rem;
 }
 
-.hero-actions {
-  display: flex;
-  gap: 14px;
-  margin-top: 22px;
-  flex-wrap: wrap;
+.hero-tags {
+  margin-top: 6px;
 }
 
 .button {

@@ -3,26 +3,9 @@ layout: default
 ---
 <main class="container">
   <section class="hero">
-    <div class="hero-card fade-in">
+    <div class="hero-banner fade-in">
       <h1>Systems notes for pragmatic engineers.</h1>
-      <p>
-        Short, technical write-ups on Python internals, testing strategy, and engineering workflows.
-        Built to be scanned, saved, and reused.
-      </p>
-      <div class="hero-actions">
-        <a class="button primary" href="#articles">Browse articles</a>
-        {% assign first_post = site.posts | first %}
-        {% if first_post %}
-          <a class="button secondary" href="{{ first_post.url }}">Read latest</a>
-        {% endif %}
-      </div>
-    </div>
-    <div class="highlight fade-in delay-1">
-      <div class="section-title">Focus areas</div>
-      <p class="meta">
-        Clear explanations, concrete examples, and workflows you can apply immediately.
-      </p>
-      <div class="tag-row" style="margin-top: 16px;">
+      <div class="tag-row hero-tags">
         {% assign top_tags = site.tags | sort %}
         {% for tag in top_tags limit:6 %}
           <a class="tag" href="/tags#{{ tag[0] | slugify }}">{{ tag[0] }}</a>
