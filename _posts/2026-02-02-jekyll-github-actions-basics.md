@@ -3,7 +3,6 @@ title: Jekyll + GitHub Actions in 3 Steps
 category: DevOps
 tags:
   - GitHub
-  - Guide
 ---
 
 If you want a Markdown-first blog on GitHub Pages with automatic builds, Jekyll plus Actions is the shortest path. Here is the core setup you need.
