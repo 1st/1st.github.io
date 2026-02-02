@@ -210,6 +210,10 @@ a:hover {
   font-size: 0.9rem;
 }
 
+.card .meta {
+  text-align: justify;
+}
+
 .meta-pill {
   display: inline-flex;
   align-items: center;
