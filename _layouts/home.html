@@ -30,7 +30,6 @@ layout: default
           <span class="meta-pill">{{ post.date | date: "%B %-d, %Y" }}</span>
           {{ post.excerpt | strip_html | truncate: 120 }}
         </p>
-        <a class="read-link" href="{{ post.url }}">Read -&gt;</a>
         {% if post.tags %}
         <div class="tag-row">
           {% for tag in post.tags %}
