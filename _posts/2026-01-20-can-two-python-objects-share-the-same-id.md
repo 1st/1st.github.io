@@ -2,7 +2,7 @@
 title: Can two Python objects share the same ID?
 category: python
 tags:
-  - Internals
+  - Python
 ---
 
 In Python, the `id()` of an object is its memory address (or a unique identifier for that object during its lifetime). Whether two objects can share the same `id()` depends on when and what objects we are talking about.

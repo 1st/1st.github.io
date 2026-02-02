@@ -2,7 +2,7 @@
 title: Software Test Types
 category: testing
 tags:
-  - Guide
+  - Testing
 ---
 
 Testing is a cornerstone of modern software development, ensuring that applications work as intended, remain reliable, and deliver a smooth user experience. Without proper testing, small coding mistakes can slip into production, leading to bugs, security vulnerabilities, performance issues, or even complete system failures.
