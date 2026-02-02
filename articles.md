@@ -6,7 +6,10 @@ permalink: /articles
 <main class="container article">
   <header class="article-header">
     <h1 class="article-title">All articles</h1>
-    <div class="article-meta">Newest to oldest. {{ site.posts.size }} total.</div>
+    {% assign oldest_post = site.posts | last %}
+    <div class="article-meta">
+      Newest to oldest. {{ site.posts.size }} total, first published {{ oldest_post.date | date: "%B %-d, %Y" }}.
+    </div>
   </header>
 
   <section class="section">
