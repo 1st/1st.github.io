@@ -9,8 +9,8 @@ permalink: /articles
     <div class="article-meta">Newest to oldest.</div>
   </header>
 
-  <article class="content">
-    <h2>Latest</h2>
+  <section class="section">
+    <h2 class="section-title">Latest</h2>
     <div class="post-grid">
       {% for post in site.posts limit:12 %}
       <article class="card">
@@ -32,20 +32,22 @@ permalink: /articles
       </article>
       {% endfor %}
     </div>
+  </section>
 
-    {% if site.posts.size > 12 %}
-      <h2 style="margin-top: 28px;">More articles</h2>
-      <ul>
-        {% for post in site.posts offset:12 %}
-          <li>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-            <span class="meta"> · {{ post.date | date: "%B %-d, %Y" }}</span>
-            {% if post.category %}
-              <span class="meta"> · {{ post.category | capitalize }}</span>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+  {% if site.posts.size > 12 %}
+  <article class="content" style="margin-top: 28px;">
+    <h2>More articles</h2>
+    <ul>
+      {% for post in site.posts offset:12 %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          <span class="meta"> · {{ post.date | date: "%B %-d, %Y" }}</span>
+          {% if post.category %}
+            <span class="meta"> · {{ post.category | capitalize }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
   </article>
+  {% endif %}
 </main>
