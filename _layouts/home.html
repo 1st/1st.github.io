@@ -4,36 +4,35 @@ layout: default
 <main class="container">
   <section class="hero">
     <div class="hero-card fade-in">
-      <h1>Build systems. Share lessons. Ship knowledge.</h1>
+      <h1>Systems notes for pragmatic engineers.</h1>
       <p>
-        Notes from the trenches on web development, Python internals, and practical testing. Short,
-        actionable, and written for engineers who care about clarity.
+        Short, technical write-ups on Python internals, testing strategy, and engineering workflows.
+        Built to be scanned, saved, and reused.
       </p>
       <div class="hero-actions">
         <a class="button" href="#articles">Browse articles</a>
         {% assign first_post = site.posts | first %}
         {% if first_post %}
-          <a class="button secondary" href="{{ first_post.url }}">Start with latest</a>
+          <a class="button secondary" href="{{ first_post.url }}">Read latest</a>
         {% endif %}
       </div>
     </div>
     <div class="highlight fade-in delay-1">
-      <div class="section-title">What you will find here</div>
+      <div class="section-title">Focus areas</div>
       <p class="meta">
-        Tactical guides, mental models, and quick references. Each post aims to answer one concrete
-        engineering question.
+        Clear explanations, concrete examples, and workflows you can apply immediately.
       </p>
       <div class="tag-row" style="margin-top: 16px;">
         <span class="tag">Python</span>
         <span class="tag">Testing</span>
+        <span class="tag">DevOps</span>
         <span class="tag">Web</span>
-        <span class="tag">Algorithms</span>
       </div>
     </div>
   </section>
 
   <section id="articles" class="section">
-    <h2 class="section-title">Featured articles</h2>
+    <h2 class="section-title">Articles</h2>
     <div class="post-grid">
       {% for post in site.posts %}
       <article class="card fade-in {% if forloop.index == 1 %}delay-1{% elsif forloop.index == 2 %}delay-2{% else %}delay-3{% endif %}">
@@ -57,18 +56,18 @@ layout: default
 
   <section class="section split" id="about">
     <div class="highlight fade-in delay-2">
-      <h2 class="section-title">About this blog</h2>
+      <h2 class="section-title">About</h2>
       <p>
         I built this space to capture the engineering notes I reach for most often. Expect short reads
-        that focus on the decision points: what to test, how to reason about runtime behavior, and how
+        that focus on decision points: what to test, how to reason about runtime behavior, and how
         to keep systems simple.
       </p>
     </div>
     <div class="highlight fade-in delay-3">
-      <h2 class="section-title">What is next</h2>
+      <h2 class="section-title">Up next</h2>
       <p>
-        More Python internals, testing checklists, and the occasional web architecture deep dive. If you
-        want a topic covered, drop it into the repo and I will add it.
+        More Python internals, testing checklists, and the occasional architecture deep dive.
+        If you want a topic covered, open an issue and I will add it.
       </p>
     </div>
   </section>
