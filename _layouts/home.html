@@ -42,7 +42,7 @@ layout: default
           {% endif %}
           {% if post.tags %}
             {% for tag in post.tags limit:1 %}
-              <a class="tag" href="/tags/#{{ tag | slugify }}">{{ tag }}</a>
+              <a class="tag" href="/tags#{{ tag | slugify }}">{{ tag }}</a>
             {% endfor %}
           {% endif %}
         </div>

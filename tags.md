@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Tags
+permalink: /tags
 ---
 <main class="container article">
   <header class="article-header">

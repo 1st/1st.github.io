@@ -12,7 +12,7 @@ layout: default
     {% if page.tags %}
     <div class="tag-row" style="margin-top: 12px;">
       {% for tag in page.tags %}
-      <a class="tag" href="/tags/#{{ tag | slugify }}">{{ tag }}</a>
+      <a class="tag" href="/tags#{{ tag | slugify }}">{{ tag }}</a>
       {% endfor %}
     </div>
     {% endif %}
